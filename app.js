@@ -11,6 +11,10 @@ const jobsRouter = require("./routes/jobs");
 const connectDB = require("./db/connect");
 const authenticateUser = require("./middleware/authentication");
 
+app.get("/", (req, res) => {
+  res.send("<h1>Jobs Api</h1>");
+});
+
 // error handler
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
