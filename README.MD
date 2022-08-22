@@ -1,4 +1,9 @@
-#### Setup
+### This is an API for creating and getting jobs.
+### A demo server: [jobs API](https://floating-ocean-09407.herokuapp.com/)
+### swagger documentation: [docs](https://floating-ocean-09407.herokuapp.com/api-docs/)
+
+
+#### For Local Setup
 
 ```bash
 npm install && npm start
