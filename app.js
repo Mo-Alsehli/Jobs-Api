@@ -10,10 +10,15 @@ const authRouter = require("./routes/auth");
 const jobsRouter = require("./routes/jobs");
 const connectDB = require("./db/connect");
 const authenticateUser = require("./middleware/authentication");
+const swaggerUI = require("swagger-ui-express");
+const YAML = require("yamljs");
+const swaggerDocs = YAML.load("./swagger.yaml");
 
 app.get("/", (req, res) => {
-  res.send("<h1>Jobs Api</h1>");
+  res.send("<h1>Jobs Api</h1><a href='/api-docs'>Documentation</a>");
 });
+
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 // error handler
 const notFoundMiddleware = require("./middleware/not-found");
